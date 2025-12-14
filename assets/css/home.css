@@ -1,0 +1,122 @@
+     body {
+            margin: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+			background-image: url("../../images/bg3.jpg");
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            background: transparent;
+        }
+        .half {
+            width: 50%;
+            padding: 2cm;
+            box-sizing: border-box;
+            position: relative;   /* REQUIRED */
+            overflow: hidden;     /* REQUIRED for zoom */
+        }
+
+        .half img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+			transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index:4;
+            /* cursor:pointer;  */
+        }
+		.half::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .half:hover::after {
+            opacity: 1;
+        }
+
+        .half:hover img {
+            transform: scale(1.1);
+        }
+        .Name-container {
+            display: flex;
+            justify-content: center; /* horizontal centering */
+            align-items: center;     /* vertical centering */
+            height: 100%;            /* take full height of parent if needed */
+            width: 100%;             /* full width of parent */
+            position: absolute;      /* optional, if you want it over the image */
+            top: 0;                  /* optional, with absolute */
+            left: 0;                 /* optional, with absolute */
+            text-align: center;      /* centers multiline text */
+            color: rgb(255, 255, 255);            /* optional: makes text visible over image */
+            font-size: 1.5rem;       /* optional: adjust as needed */
+            z-index : 999;
+            font-size: 2em;
+            font-weight: bold;
+            /* cursor: pointer; */
+            
+        }
+
+        .Name-txt{
+            border: solid rgba(255,255,255,0.8) 4px;
+            padding: 10px; 
+            background-color: rgba(0, 0, 0, 0.35);
+            cursor : pointer;
+            border-radius : 5px;
+            transition: all 0.5s ease ;
+        }
+
+        .Name-txt:hover {
+            background-color: rgba(0, 0, 0, 0.65);
+            border: solid rgba(255,255,255,0.6) 2px;
+        }
+
+        /* .Namecontainer:hover {
+            cursor: pointer;
+        } */
+
+        .single-gallery-image {
+            margin-top: 30px;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            height: 200px;
+        }
+
+        
+
+
+        .gallery-area {
+        background-color: #04091e;
+        }
+
+        .gallery-area #grid-container {
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+        }
+
+        .gallery-area .grid-item {
+        opacity: 0;
+        float: left;
+        box-sizing: border-box;
+        }
+
+        .gallery-area .grid-item img {
+        width: 100%;
+        height: 100%;
+        }
+
+        .gallery-area .grid-item.loaded {
+        opacity: 1;
+        transition: opacity .5s;
+        }
+
+        
